@@ -1,0 +1,60 @@
+ @mixin btnReset{
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+ }
+
+ @mixin flex{
+  display: flex;
+ }
+
+ @mixin makeMenu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+ }
+
+ @mixin pseudo-element($content: '', $display: block, $pos: absolute){
+  content: $content;
+  display: $display;
+  position: $pos;
+ }
+
+ @mixin сentering-xy() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin сentering-x() {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin сentering-y() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@function z($name) {
+  @if index($z-indexes, $name) {
+   @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+   @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+   @return null;
+  }
+}
+$z-indexes: (
+  "preloader",
+  "modal",
+  "header",
+  "button",
+  "footer"
+);

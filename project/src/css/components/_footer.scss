@@ -1,0 +1,6 @@
+@import '../variables';
+@import '../mixins';
+
+.footer{
+  z-index: z('footer');
+}
